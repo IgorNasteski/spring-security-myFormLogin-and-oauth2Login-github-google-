@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+</head>
+<body>
+
+    <h1>Hello World</h1>
+
+    <h2>Welcome, <span th:text="${userName}"></span>!</h2>
+
+    <form th:action="@{/logout}" method="post">
+        <span class="fa fa-sign-out" th:style="'color: red;'">
+            <input type="submit" value="Logout" th:style="'border: none; background: none; color: red;'"/>
+        </span>
+    </form>
+
+</body>
+</html>

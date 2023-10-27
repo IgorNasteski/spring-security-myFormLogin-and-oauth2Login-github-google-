@@ -1,0 +1,45 @@
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+         github:
+          clientId: 4bf67051944443229eda
+          clientSecret: ab8da07230431d5fbdd2f4f8f0c838a26d7b5e3d
+          scope:
+           - user:email
+           - read:user
+         google:                                    #AKO ZELIM DODATI TAKODJE I GUGL OPCIJU ZA LOGIN
+          clientId: 400348880520-6jmd7ve5e1j69lqgnk24vhm9rqq3mn9j.apps.googleusercontent.com
+          clientSecret: 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
+  datasource:
+    url: jdbc:mysql://localhost:3306/spring_security_formlogin&github&google(oauth2_authorization)?useSSL=false
+    username: root
+    password: kosarkas92
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.MySQLDialect
+
+
+#Da biste dobili clientId i clientSecret od Google-a za vašu aplikaciju, trebate da sledite ove korake:
+#
+#Idite na Google API konzolu na adresi: https://console.cloud.google.com/apis/dashboard
+#Ako već nemate projekt, kreirajte novi projekat pritiskom na dugme "Select a project" u gornjem meniju, a zatim na "New Project".
+#Kada ste odabrali ili kreirali projekat, kliknite na dugme "ENABLE APIS AND SERVICES" da biste omogućili API-je za vaš projekat.
+#Potražite i omogućite Google+ API i bilo koji drugi API koji vaša aplikacija može zahtevati za autentifikaciju ili pristup korisničkim podacima.
+#Nakon omogućavanja API-ja, idite na stranicu "Credentials" u meniju sa leve strane.
+#Kliknite na dugme "Create credentials" i odaberite "OAuth client ID" iz padajućeg menija.
+#Izaberite vrstu aplikacije koju kreirate (npr. Web application, Android, iOS), unesite naziv vaše aplikacije i konfigurišite odgovarajuće URL-ove povratnog poziva ako je potrebno.
+#Nakon toga, dobićete clientId i clientSecret koje možete koristiti u vašoj aplikaciji za OAuth2 autentifikaciju sa Google-om.
+
+
+
+#dodavanje konfiguracije za moju mySql bazu
+#spring:
+#  datasource:
+#    url: jdbc:mysql://localhost:3306/spring_security_formlogin&github&google(oauth2_authorization)?useSSL=false
+#    username: root
+#    password: kosarkas92
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#  jpa:
+#    database-platform: org.hibernate.dialect.MySQLDialect
